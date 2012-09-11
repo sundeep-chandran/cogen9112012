@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Enterprise Productivity  Mobile: Prototype</title>
+
+   
+   
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="css/dm.css" /> 
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	
+	
+	<link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" /> 
+	<link type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" rel="stylesheet" /> 
+	<link type="text/css" href="http://dev.jtsage.com/jQM-DateBox2/css/demos.css" rel="stylesheet" /> 
+	
+	<script type="text/javascript" src="http://dev.jtsage.com/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.datebox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.durationbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.slidebox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.customflip.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.custombox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+	
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.js"></script>
+	<script type="text/javascript" src="demos/extras.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/gpretty/prettify.js"></script>
+	<link type="text/css" href="http://dev.jtsage.com/gpretty/prettify.css" rel="stylesheet" />
+	
+	<script type="text/javascript">
+		$('div').live('pagecreate', function() {
+			prettyPrint();
+		});
+	</script>
+	
+
+
+ 
+</head> 
+
+<body>
+
+<!-- Login Page -->
+
+	<div data-role="page" id="home">
+
+		<div data-role="header" data-theme="a">
+			
+			<h1>Enterprise Productivity Tool</h1>
+			 <!-- <a href="register.html" data-icon="register" data-iconpos="text" data-transition="fade">Register</a>  -->
+		</div><!-- /header -->
+
+		<div data-role="content">
+
+			<div class="content-primary" data-theme="c">
+				<p class="intro"><strong>Welcome.</strong> Enterprise Productivity App helps the enterprise to capture their client actions and generates timesheets and reports.</p>
+			  
+				<input type="text" name="username" id="clerkid" placeholder="User Name	" value=""/>
+				<input type="password" name="password" id="password" placeholder="Password" value="" />
+						   
+			   <fieldset class="ui-grid-solo">
+					<div class="ui-block-a" align = center><a href="#enterpriseadminmodule" data-icon="check" type="reset" data-role="button" data-theme="b">Login</a></div>
+						
+			</div><!-- content-primary -->
+
+		</div><!-- /content -->
+		
+		<div data-role="footer" class="footer-docs" data-theme="a" data-position="fixed" >
+			<p><center>&copy; 2012 Dobango Inc.</p>
+		</div> <!-- /Footer -->
+
+	</div>
+	
+	<div data-role="page" id = "enterpriseadminmodule" data-title= "Enterprise Admin Module" data-add-back-btn="true" data-back-btn-text="Previous" data-back-btn-theme="a" >
+	
+		<div data-role="header" data-theme="a">
+			<h1>Admin Section</h1>
+			<a href="#home" class="ui-btn-left">Back</a>
+			<a href="#" class="ui-btn-right">logout</a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+
+			<div class="content-primary">
+						
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
+					<h3>Projects</h3>
+					<div data-role="controlgroup" data-theme="c" data-dividertheme="f">
+						<a href="#newprojectform" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Create New Project</a>
+						<a href="#lists" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">View Existing Projects</a>
+					</div>
+				</div><!-- Projects -->
+				
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
+					<h3>Tasks</h3>
+					<div data-role="controlgroup" data-theme="c" data-dividertheme="f">
+						<a href="list-customers.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Create Task</a>
+						<a href="list-customers.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">View Task</a>
+						<a href="add-customer.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Edit Task</a>
+						<a href="home.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Delete Task</a>
+						
+					</div>
+				</div><!-- Tasks -->
+				
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
+					<h3>Users</h3>
+					<div data-role="controlgroup" data-theme="c" data-dividertheme="f">
+						<a href="list-customers.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Create New User</a>
+						<a href="add-customer.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Edit User</a>
+						<a href="add-customer.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Delete User</a>
+					</div>
+				</div><!-- Users-->
+
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
+					<h3>Time Sheets</h3>
+					<div data-role="controlgroup">
+						<a href="parts-lookup.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Projects</a>
+					 </div>    
+				</div><!-- /Time Sheets -->
+
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
+					<h3>Expense Report<h3>
+					<div data-role="controlgroup">
+						<a href="add-wo-parts.html" rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right">Projects</a>
+					</div>    
+				</div><!-- /Expense Report -->
+
+			</div><!--/content-primary-->
+		</div> <!--content-->
+		
+		<div data-role="footer" class="footer-docs" data-theme="a" data-position="fixed">
+			<p><center>&copy; 2012 Dobango Inc.</p>
+		</div> <!-- /Footer -->
+		
+	</div> <!--enterpriseadminmodule -->
+	
+	
+	
+	<div data-role="page" id = "newprojectform" data-title= "New Project Form Module" data-add-back-btn="true" data-back-btn-text="Previous" data-back-btn-theme="a" >
+	
+		<div data-role="header" data-theme="a">
+			<h1>Enterprise Productivity Tool</h1>
+			<a href="#enterpriseadminmodule" class="ui-btn-left">Back</a>
+			<a href="#" class="ui-btn-right">logout</a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+			
+			<div class="content-primary"> 
+
+				<form action="#" method="get">
+
+					<h2>New Project Form	</h2>
+
+					<!-- <p>All form controls accept a <code>data-mini="true"</code> attribute that renders a smaller version of the <a href="forms-all.html">standard-sized</a> form elements. In the case of grouped buttons, the <code>data-mini="true"</code> attribute can be added to the containing controlgroup. <a href="forms-all-compare.html">Compare mini and normal</a> form elements side-by-side.</p> -->
+
+					<div data-role="fieldcontain">
+						 <label for="name">Name:</label>
+						 <input type="text" name="name" id="name" value="" data-mini="true" />
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="textarea">Description	:</label>
+						<textarea cols="40" rows="8" name="textarea" id="textarea" data-mini="true"></textarea>
+					</div>
+					
+					
+					
+					<div data-role="fieldcontain">
+								<label for="mode1">Start Date </label>
+								<input name="mode1" id="mode1" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true}' />
+					</div>		
+					<div data-role="fieldcontain">		
+								
+								<label for="mode6">Start Time</label>
+								<input name="mode6" id="mode6" type="text" data-role="datebox" data-options='{"mode":"timebox", "useNewStyle":true}' />
+					</div>
+					
+					<div data-role="fieldcontain">
+								<label for="mode1">End  Date </label>
+								<input name="mode1" id="mode1" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true}' />
+					</div>		
+					<div data-role="fieldcontain">		
+								
+								<label for="mode6">End Time</label>
+								<input name="mode6" id="mode6" type="text" data-role="datebox" data-options='{"mode":"timebox", "useNewStyle":true}' />
+					</div>
+					
+						
+						<fieldset class="ui-grid-solo">
+	            			<!--
+							<div class="ui-block-a"><a href="#login" data-icon="check" type="reset" data-role="button" data-theme="b">Submit</a></div>
+							<div class="ui-block-b"><a href="#cancel" data-icon="check" type="submit" data-role="button" data-theme="b">Cancel</a></div>
+							-->
+							<div class="ui-btn-left"><a href="#login" data-icon="check" type="reset" data-role="button" data-theme="a">Submit</a></div>
+							<div class="ui-btn-right"><a href="#cancel" data-icon="check" type="submit" data-role="button" data-theme="a	">Cancel</a></div>
+						</fieldset>
+					
+     	   
+						
+				</form>
+				
+				
+			</div><!--/content-primary -->		
+			
+		</div><!-- /content -->
+
+		<div data-role="footer" class="footer-docs" data-theme="a" data-position="fixed">
+				<p> <center> &copy; 2012 Dobango Inc.</p>
+		</div>
+	</div> <!--newprojectform -->
+	
+	 <div data-role="page" id ="lists" data-title= "lists-nested" data-add-back-btn="true" data-back-btn-text="Previous" data-back-btn-theme="a" >
+
+		<div data-role="header" data-theme="a">
+			<h1>List of Projects</h1>
+			<a href="#enterpriseadminmodule" class="ui-btn-left">Back</a>
+			<a href="#" class="ui-btn-right">logout</a>
+			<!-- <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> -->
+			 
+		</div><!-- /header -->
+
+		<div data-role="content">
+				
+			<div class="content-primary">	
+				<ul data-role="listview">
+					<li>
+						<h3>Project 1</h3>
+						<p>Software Development</p>
+						<ul>
+							<li><a href="#viewproject">View Project</a></li>
+							<li><a href="#editproject">Edit Project</a></li>	
+							<li><a href="#deleteproject">Delete Project</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3>Project 2</h3>
+						<p>Description Goes Here</p>
+						<ul>
+							<li><a href="#viewproject">View Project</a></li>
+							<li><a href="#editproject">Edit Project</a></li>	
+							<li><a href="#deleteproject">Delete Project</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3>Project 3</h3>
+						<p>Description Goes Here</p>
+						<ul>
+							<li><a href="#viewproject">View Project</a></li>
+							<li><a href="#editproject">Edit Project</a></li>	
+							<li><a href="#deleteproject">Delete Project</a></li>
+						</ul>
+					</li>
+								
+				</ul>
+					
+				
+			</div> <!--/content-primary -->		
+		</div><!-- /content -->
+
+		<div data-role="footer" class="footer-docs" data-theme="a" data-position="fixed">
+				<p><center>&copy; 2012 Dobango Inc </p>
+		</div>
+
+	</div><!-- page/ list of projects  -->
+</body>
+</html>
